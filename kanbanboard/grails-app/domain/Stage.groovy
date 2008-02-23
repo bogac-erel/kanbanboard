@@ -13,4 +13,8 @@ class Stage {
 		stageOrder(scale:0)
 	}
 	
+	def getKanbans = {
+		new Kanban(name:"Kanban Board Crud", description:"Get the basic crud for the board working.").save()
+	}
+	
 }
