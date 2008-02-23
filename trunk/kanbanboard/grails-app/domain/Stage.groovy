@@ -14,7 +14,8 @@ class Stage {
 	}
 	
 	def getKanbans = {
-		new Kanban(name:"Kanban Board Crud", description:"Get the basic crud for the board working.").save()
+		[ new Kanban(name:"Kanban Board Crud", description:"Get the basic crud for the board working.").save(),
+		new Kanban(name:"Kanban Board Crud", description:"Get the basic crud for the board working.").save()]
 	}
 	
 }
