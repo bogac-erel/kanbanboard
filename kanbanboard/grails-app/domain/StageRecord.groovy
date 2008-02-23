@@ -1,14 +1,18 @@
 class StageRecord {
+	
 	String user
-	Date startDate
+	Date startDate = new Date()
 	Date endDate
 	Kanban kanban
-	static belongsTo = Kanban
+	Stage stage
+	
+	static belongsTo = [kanban:Kanban, stage:Stage]
 	
     static constraints = {
     	user(blank:false)
     	startDate(nullable: false)
     	endDate(nullable: true)
     	kanban(nullable: false)
+    	stage(nullable: false)
     }
 }

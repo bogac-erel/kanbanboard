@@ -12,4 +12,5 @@ class Stage {
 		maxKanbans(scale:0, nullable:true)
 		stageOrder(scale:0)
 	}
+	
 }
