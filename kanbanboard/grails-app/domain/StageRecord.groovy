@@ -1,4 +1,4 @@
-class StageRecord {
+class StageRecord implements Comparable {
 	
 	String user
 	Date startDate = new Date()
@@ -15,4 +15,8 @@ class StageRecord {
     	kanban(nullable: false)
     	stage(nullable: false)
     }
+
+	int compareTo(obj) {
+		startDate.compareTo(obj.startDate) * -1
+	}
 }
