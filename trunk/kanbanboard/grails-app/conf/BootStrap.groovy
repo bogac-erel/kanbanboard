@@ -20,7 +20,9 @@ class BootStrap {
      	new Stage(name:"QA", size:20, stageOrder: 6, color: "#97E3FF").save();
      	new Stage(name:"Release Ready", size:10, stageOrder: 7, color: "#9EFF97").save();
      	
-     	def kanban = new Kanban(name:"Kanban Board Crud", description:"Get the basic crud for the board working.").save()
+     	def firstKanban = new Kanban(name:"Kanban Board Crud", description:"Get the basic crud for the board working.").save()
+		def firstStage = new StageRecord(user:"brad", kanban: firstKanban, stage: readyStage).save();
+		firstKanban.addToStages(firstStage).save()
      }
      def destroy = {
      }
