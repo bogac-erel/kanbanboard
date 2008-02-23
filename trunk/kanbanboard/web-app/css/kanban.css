@@ -1,0 +1,6 @@
+/**
+ * Kanban Board
+ */
+	.kanban-container			{ float: left; border: solid 1px #000; max-width: 150px; }
+	.kanban-title				{ background: #fff url(../images/skin/shadow.jpg); border-bottom: solid 1px #666; color: #666; font-size: .80em; font-weight: bold; padding: 3px; }
+	.kanban-description			{ font-size: .80em; padding: 5px; background-color: #fff; }

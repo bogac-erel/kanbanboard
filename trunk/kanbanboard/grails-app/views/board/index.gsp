@@ -18,7 +18,12 @@
 <tr>
 <g:each in="${stages}" status="i" var="stage">
 	<td style="background-color: ${stage.color}">
-		Stage kanbans
+		<g:each in="${stage.getKanbans()}" var="kanban">
+			<div class="kanban-container">
+				<div class="kanban-title">${kanban.name}</div>
+				<div class="kanban-description">${kanban.description}</div>
+			</div>
+		</g:each>
 	</td>
 </g:each>
 </tr>
