@@ -5,8 +5,20 @@ class Kanban {
 	static hasMany = [stages:StageRecord]
 	
 	def getCurrentStage() {
-		if (stages.isEmpty() == false){
-			return stages.first().stage
+		if (getCurrentStageRecord() != null) {
+			return getCurrentStageRecord().stage
+		}
+	}
+	
+	def getCurrentUser() {
+		if (getCurrentStageRecord() != null) {
+			return getCurrentStageRecord().user
+		}
+	}
+	
+	def getCurrentStageRecord() {
+		if (stages.isEmpty() == false) {
+			return stages.first()
 		}
 	}
 	
