@@ -25,10 +25,10 @@ class BootStrap {
 		def thirdKanban = new Kanban(name:"Second Ready", description:"Second kanban").save();
 		def firstStage = new StageRecord(user:"brad", kanban: firstKanban, stage: readyStage).save();
 		firstKanban.addToStages(firstStage).save()
-		secondKanban.moveToStage(readyStage, "brad");
-		thirdKanban.moveToStage(readyStage, "skye");
-		secondKanban.moveToStage(devStage, "skye");
-		secondKanban.moveToStage(peerStage, "skye")
+		secondKanban.moveToStage(readyStage, "brad").save();
+		thirdKanban.moveToStage(readyStage, "skye").save();
+		secondKanban.moveToStage(devStage, "skye").save();
+		secondKanban.moveToStage(peerStage, "skye").save();
      }
      def destroy = {
      }

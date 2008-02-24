@@ -26,6 +26,6 @@ class Kanban {
 		if (getCurrentStageRecord() != null) {
 			getCurrentStageRecord().setEndDate(new Date())
 		}
-		this.addToStages(new StageRecord(stage: stage, user: user)).save();
+		this.addToStages(new StageRecord(stage: stage, user: user));
 	}
 }
