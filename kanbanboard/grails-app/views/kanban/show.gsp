@@ -47,11 +47,20 @@
                             <td valign="top" class="name">Stages:</td>
                             
                             <td  valign="top" style="text-align:left;" class="value">
-                                <ul>
+                                <table>
+								<tr>
+									<th>Start Date</th>
+									<th>Stage</th>
+									<th>User</th>
+								</tr>
                                 <g:each var="s" in="${kanban.stages}">
-                                    <li><g:link controller="stageRecord" action="show" id="${s.id}">${s}</g:link></li>
+                                    <tr>
+										<td>${s.startDate}</td>
+										<td><g:link controller="stageRecord" action="show" id="${s.id}">${s.stage.name}</g:link></td>
+										<td>${s.user}</td>
+									</tr>
                                 </g:each>
-                                </ul>
+                                </table>
                             </td>
                             
                         </tr>

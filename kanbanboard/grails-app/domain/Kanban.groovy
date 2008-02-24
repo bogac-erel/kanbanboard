@@ -17,12 +17,15 @@ class Kanban {
 	}
 	
 	def getCurrentStageRecord() {
-		if (stages.isEmpty() == false) {
+		if (stages != null && stages.isEmpty() == false) {
 			return stages.first()
 		}
 	}
 	
 	def moveToStage(Stage stage, String user) {
+		if (getCurrentStageRecord() != null) {
+			getCurrentStageRecord().setEndDate(new Date())
+		}
 		this.addToStages(new StageRecord(stage: stage, user: user)).save();
 	}
 }
