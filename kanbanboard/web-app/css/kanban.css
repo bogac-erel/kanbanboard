@@ -1,7 +1,7 @@
 /**
  * Kanban Board
  */
-	.kanban-container				{ float: left; border: solid 1px #000; width: 125px; margin: 3px; }
+	.kanban-container				{ float: left; border: solid 1px #000; width: 125px; margin: 3px; cursor: pointer; }
 	.kanban-header					{ background: #fff url(../images/skin/shadow.jpg) bottom left repeat-x; color: #666; font-size: .85em; padding: 3px; }
 	.kanban-title					{ font-weight: bold; }
 	.kanban-owner					{ }
@@ -13,3 +13,6 @@
 	.kanban-detail-link a:active,
 	.kanban-detail-link a:visited	{ text-decoration: none; color: #2466F5; }
 	.kanban-detail-link a:hover		{ text-decoration: underline; color: #1148BE; }
+	
+	.stage-cell						{ height: 400px; }
+	.droppable-hover				{ background-color: #2AFF00 !important; }
