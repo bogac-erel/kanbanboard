@@ -3,7 +3,14 @@
         <title><g:layoutTitle default="Grails" /></title>
         <link rel="stylesheet" href="${createLinkTo(dir:'css',file:'main.css')}" />
         <link rel="stylesheet" href="${createLinkTo(dir:'css',file:'kanban.css')}" />
-        <link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
+		<link rel="stylesheet" href="${createLinkTo(dir:'css',file:'thickbox.css')}" />
+		
+		<script type="text/javascript" src="${createLinkTo(dir:'js/jquery',file:'jquery-1.2.3.pack.js')}" ></script>
+		<script type="text/javascript" src="${createLinkTo(dir:'js/jquery',file:'thickbox.js')}" ></script>
+		<script type="text/javascript" src="${createLinkTo(dir:'js',file:'kanban.js')}" ></script>
+    	
+		<link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
+		
         <g:layoutHead />
         <g:javascript library="application" />				
     </head>
