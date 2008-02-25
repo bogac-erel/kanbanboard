@@ -8,6 +8,13 @@
 		<script type="text/javascript" src="${createLinkTo(dir:'js/jquery',file:'jquery-1.2.3.pack.js')}" ></script>
 		<script type="text/javascript" src="${createLinkTo(dir:'js/jquery',file:'thickbox.js')}" ></script>
 		<script type="text/javascript" src="${createLinkTo(dir:'js',file:'kanban.js')}" ></script>
+		
+		<script type="text/javascript" src="${createLinkTo(dir:'js/jquery',file:'jquery.dimensions.js')}"></script>
+		<script type="text/javascript" src="${createLinkTo(dir:'js/jquery',file:'ui.mouse.js')}"></script>
+		<script type="text/javascript" src="${createLinkTo(dir:'js/jquery',file:'ui.draggable.js')}"></script>
+		<script type="text/javascript" src="${createLinkTo(dir:'js/jquery',file:'ui.draggable.ext.js')}"></script>
+		<script type="text/javascript" src="${createLinkTo(dir:'js/jquery',file:'ui.droppable.js')}"></script>
+		<script type="text/javascript" src="${createLinkTo(dir:'js/jquery',file:'ui.droppable.ext.js')}"></script>
     	
 		<link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
 		
