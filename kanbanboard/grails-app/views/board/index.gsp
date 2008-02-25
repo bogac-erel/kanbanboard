@@ -22,7 +22,7 @@
 			<div class="kanban-container">
 				<div class="kanban-header">
 					<div class="kanban-icons">
-						<img src="images/icons/arrow_down.png" class="kanban-expand"/>
+						<img src="/kanbanboard/images/icons/arrow_down.png" class="kanban-expand"/>
 					</div>
 					<div class="kanban-title">${kanban.name}</div>
 					<div class="kanban-owner">${kanban.currentUser}</div>
@@ -31,6 +31,14 @@
 					<div>${kanban.description}</div>
 					<div class="kanban-detail-link">
 						<g:link controller="kanban" action="detail" id="${kanban.id}" class="thickbox" title="Kanban Detail">...view detail</g:link>
+						<g:form action="moveToStage">
+							<input type="hidden" name="kanbanId" value="${kanban.id}" />
+							<g:select name="stageId"
+					          from="${Stage.list().findAll({it!=kanban.getCurrentStageRecord().stage})}"
+					          optionKey="id" 
+							  optionValue="name"/>
+ 							<g:actionSubmit value="Move" action="moveToStage"/>
+						</g:form>
 					</div>
 				</div>
 			</div>
