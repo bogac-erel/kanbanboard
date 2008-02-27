@@ -30,7 +30,7 @@
 		<tr class="prop">
             <td valign="top" class="name">Lead Time:</td>
             
-            <td valign="top" class="value">${kanban.getLeadTime()}</td>
+            <td valign="top" class="value">${DateUtil.getDifferenceAsString(kanban.getLeadTime())}</td>
         </tr>
 
 	</tbody>
@@ -48,7 +48,7 @@
 		<tr>
 			<td><g:link controller="stageRecord" action="show" id="${s.id}">${s.stage.name}</g:link></td>
 			<td>${s.user}</td>
-			<td>${s.getTimeElapsed()}</td>
+			<td>${DateUtil.getDifferenceAsString(s.getCycleTime())}</td>
 		</tr>
 	</g:each>
 	</tbody>
