@@ -23,7 +23,7 @@ class Kanban {
 		def start = getFirstStageRecord().startDate.time
 		def endRecord = getCurrentStageRecord()
 		def end = (endRecord != null && endRecord.endDate != null) ? endRecord.endDate : new Date().time
-		return DateUtil.getDifferenceAsString(end - start)
+		return (end - start)
 	}
 	
 	def getCurrentUser() {
