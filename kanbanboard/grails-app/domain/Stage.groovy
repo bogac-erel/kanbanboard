@@ -17,4 +17,13 @@ class Stage {
 		Kanban.list().findAll({it.getCurrentStage()==this})
 	}
 	
+	def getCycleTime() {
+		def totalCycleTime = 0
+		def records = StageRecord.findAllByStage(this)
+		records.each { it ->
+			totalCycleTime += it.getCycleTime()
+		}
+		return records.size() != 0 ? totalCycleTime / records.size() : 0
+	}
+	
 }

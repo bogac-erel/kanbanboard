@@ -15,6 +15,7 @@
 	</g:each>
 	</tr>
 </thead>
+<tbody>
 <tr>
 <g:each in="${stages}" status="i" var="stage">
 	<td class="stage-cell" style="background-color: ${stage.color}" id="${stage.name}-stage" stage="${stage.id}">
@@ -43,4 +44,12 @@
 	</td>
 </g:each>
 </tr>
+</tbody>
+<tfoot>
+<tr>
+	<g:each in="${stages}" status="i" var="stage">
+		<td>${DateUtil.getDifferenceAsString(stage.getCycleTime())}</td>
+	</g:each>
+</tr>
+</tfoot>
 </table>

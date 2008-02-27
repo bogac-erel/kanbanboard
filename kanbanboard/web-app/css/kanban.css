@@ -2,6 +2,7 @@
  * Kanban Board
  */
     .kanban-board-table th          { border-bottom: solid 1px #ccc; }
+	.kanban-board-table tfoot td	{ border-top: solid 1px #ccc; text-align: center; background: #fff url(../images/skin/shadow.jpg); color: #666; font-weight: bold; padding: 2px 6px; }
 	.kanban-container				{ color: #000; background-color: #fff; float: left; border: solid 2px #4E4E4E; width: 125px; margin: 3px; }
 	.kanban-header					{ font-size: .85em; padding: 3px; cursor: move; }
 	.kanban-title					{ font-weight: bold; }
