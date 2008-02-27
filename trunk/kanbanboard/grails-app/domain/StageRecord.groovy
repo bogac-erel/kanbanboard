@@ -24,8 +24,7 @@ class StageRecord implements Comparable {
 		def start = startDate.time
 		def end = endDate != null ? endDate.time : new Date().time
 		Long difference = end - start
-		def diffString = DateUtil.getDifferenceAsString(difference)
-		return diffString == "" ? "< 1s" : diffString;
+		return DateUtil.getDifferenceAsString(difference)
 	}
 	
 }
