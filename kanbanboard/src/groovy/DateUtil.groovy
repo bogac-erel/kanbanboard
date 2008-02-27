@@ -8,7 +8,8 @@ class DateUtil {
         secs -= appendStringField(secs, sign, 'h', 60 * 60, sb)
         secs -= appendStringField(secs, sign, 'm', 60, sb)
         appendStringField(secs, sign, 's', 1, sb)
-        return sb.toString().trim()
+        def diffString = sb.toString().trim()
+		return diffString == "" ? "< 1s" : diffString
     }
 
 	private static appendStringField(secs, sign, ch, multiplier, sb) {
