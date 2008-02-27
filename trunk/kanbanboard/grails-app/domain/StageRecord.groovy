@@ -19,4 +19,13 @@ class StageRecord implements Comparable {
 	int compareTo(obj) {
 		startDate.compareTo(obj.startDate) * -1
 	}
+	
+	def getTimeElapsed = {	
+		def start = startDate.time
+		def end = endDate != null ? endDate.time : new Date().time
+		Long difference = end - start
+		def diffString = DateUtil.getDifferenceAsString(difference)
+		return diffString == "" ? "< 1s" : diffString;
+	}
+	
 }
