@@ -22,6 +22,12 @@
             <td valign="top" class="value">${kanban.name}</td>
             
         </tr>
+
+		<tr class="prop">
+            <td valign="top" class="name">Type:</td>
+            
+            <td valign="top" class="value">${kanban.type.name}</td>
+        </tr>
     
         <tr class="prop">
             <td valign="top" class="name">Stages:</td>

@@ -17,9 +17,9 @@
 </thead>
 <tr>
 <g:each in="${stages}" status="i" var="stage">
-	<td class="stage-cell" style="background-color: ${stage.color}" id="${stage.name}-stage" stage="${stage.id}">&nbsp;
+	<td class="stage-cell" style="background-color: ${stage.color}" id="${stage.name}-stage" stage="${stage.id}">
 		<g:each in="${stage.getKanbans()}" var="kanban">
-			<div class="kanban-container" stage="${stage.id}">
+			<div class="kanban-container" stage="${stage.id}" style="background-color: ${kanban.type.color}">
 				<div class="kanban-header">
 					<div class="kanban-icons">
 						<img src="/kanbanboard/images/icons/arrow_down.png" class="kanban-expand"/>
@@ -39,6 +39,7 @@
 				</div>
 			</div>
 		</g:each>
+		&nbsp;
 	</td>
 </g:each>
 </tr>

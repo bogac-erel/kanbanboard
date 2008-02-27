@@ -1,6 +1,7 @@
 class Kanban {
 	String name
 	String description
+	KanbanType type
 	SortedSet stages
 	static hasMany = [stages:StageRecord]
 	
