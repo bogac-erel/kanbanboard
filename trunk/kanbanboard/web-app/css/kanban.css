@@ -1,18 +1,19 @@
 /**
  * Kanban Board
  */
-	.kanban-container				{ float: left; border: solid 1px #000; width: 125px; margin: 3px; cursor: pointer; }
-	.kanban-header					{ background: #fff url(../images/skin/shadow.jpg) bottom left repeat-x; color: #666; font-size: .85em; padding: 3px; }
+    .kanban-board-table th          { border-bottom: solid 1px #ccc; }
+	.kanban-container				{ color: #000; background-color: #fff; float: left; border: solid 2px #4E4E4E; width: 125px; margin: 3px; }
+	.kanban-header					{ font-size: .85em; padding: 3px; cursor: move; }
 	.kanban-title					{ font-weight: bold; }
 	.kanban-owner					{ }
 	.kanban-expand					{ cursor: pointer; }
 	.kanban-icons					{ float: right; }
-	.kanban-description				{ font-size: .85em; padding: 5px; background-color: #fff; border-top: solid 1px #666; }
+	.kanban-description				{ font-size: .85em; padding: 5px; border-top: solid 1px #4E4E4E; }
 	.kanban-detail-link				{ text-align: right; }
 	.kanban-detail-link a:link,
 	.kanban-detail-link a:active,
-	.kanban-detail-link a:visited	{ text-decoration: none; color: #2466F5; }
-	.kanban-detail-link a:hover		{ text-decoration: underline; color: #1148BE; }
+	.kanban-detail-link a:visited	{ text-decoration: none; color: #000; }
+	.kanban-detail-link a:hover		{ text-decoration: underline; color: #000; }
 	
 	.stage-cell						{ height: 400px; }
-	.droppable-hover				{ background-color: #2AFF00 !important; }
+	.droppable-hover				{ background-color: #FEFFD8 !important; }
