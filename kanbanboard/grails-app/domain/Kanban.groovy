@@ -1,4 +1,5 @@
 class Kanban {
+
 	String name
 	String description
 	KanbanType type
@@ -11,6 +12,20 @@ class Kanban {
 		}
 	}
 	
+	def getStartDate() {
+		def firstStageRecord = getFirstStageRecord()
+		if(firstStageRecord != null) {
+			return firstStageRecord.startDate
+		}
+	}
+	
+	def getLeadTime() {
+		def start = getFirstStageRecord().startDate.time
+		def endRecord = getCurrentStageRecord()
+		def end = (endRecord != null && endRecord.endDate != null) ? endRecord.endDate : new Date().time
+		return DateUtil.getDifferenceAsString(end - start)
+	}
+	
 	def getCurrentUser() {
 		if (getCurrentStageRecord() != null) {
 			return getCurrentStageRecord().user
@@ -20,6 +35,12 @@ class Kanban {
 	def getCurrentStageRecord() {
 		if (stages != null && stages.isEmpty() == false) {
 			return stages.first()
+		}
+	}
+	
+	def getFirstStageRecord() {
+		if (stages != null && stages.isEmpty() == false) {
+			return stages.last()
 		}
 	}
 	

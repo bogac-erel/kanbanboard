@@ -30,7 +30,7 @@
 				<div class="kanban-description">
 					<div>${kanban.description}</div>
 					<div class="kanban-detail-link">
-						<g:link controller="kanban" action="detail" id="${kanban.id}" class="thickbox" title="Kanban Detail">...view detail</g:link>
+						<g:link controller="kanban" action="detail" id="${kanban.id}" class="thickbox" title="${kanban.name}">...view detail</g:link>
 						<g:form action="moveToStage">
 							<input type="hidden" name="kanbanId" value="${kanban.id}" />
 							<input type="hidden" name="stageId" class="move-stageId" />
