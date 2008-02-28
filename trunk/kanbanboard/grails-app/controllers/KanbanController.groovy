@@ -22,13 +22,7 @@ class KanbanController {
     }
 
 	def detail = {
-		def kanban = Kanban.get( params.id )
-
-        if(!kanban) {
-            flash.message = "Kanban not found with id ${params.id}"
-            redirect(action:list)
-        }
-        else { return [ kanban : kanban ] }
+		return this.show()
 	}
 
     def delete = {

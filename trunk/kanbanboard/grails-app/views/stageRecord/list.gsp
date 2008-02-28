@@ -47,9 +47,9 @@
                         
                             <td>${stageRecord.endDate?.encodeAsHTML()}</td>
                         
-                            <td>${stageRecord.kanban?.encodeAsHTML()}</td>
+                            <td>${stageRecord.kanban?.name?.encodeAsHTML()}</td>
                         
-                            <td>${stageRecord.stage?.encodeAsHTML()}</td>
+                            <td>${stageRecord.stage?.name?.encodeAsHTML()}</td>
                         
                         </tr>
                     </g:each>
