@@ -60,7 +60,7 @@
                                     <label for="kanban">Kanban:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:stageRecord,field:'kanban','errors')}">
-                                    <g:select optionKey="id" from="${Kanban.list()}" name="kanban.id" value="${stageRecord?.kanban?.id}" ></g:select>
+                                    <g:select optionKey="id" from="${Kanban.list()}" name="kanban.id" value="${stageRecord?.kanban?.id}" optionValue="name" ></g:select>
                                 </td>
                             </tr> 
                         
@@ -69,7 +69,7 @@
                                     <label for="stage">Stage:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:stageRecord,field:'stage','errors')}">
-                                    <g:select optionKey="id" from="${Stage.list()}" name="stage.id" value="${stageRecord?.stage?.id}" ></g:select>
+                                    <g:select optionKey="id" from="${Stage.list()}" name="stage.id" value="${stageRecord?.stage?.id}" optionValue="name" ></g:select>
                                 </td>
                             </tr> 
                         

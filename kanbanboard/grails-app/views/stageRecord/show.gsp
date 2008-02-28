@@ -53,14 +53,14 @@
                         <tr class="prop">
                             <td valign="top" class="name">Kanban:</td>
                             
-                            <td valign="top" class="value"><g:link controller="kanban" action="show" id="${stageRecord?.kanban?.id}">${stageRecord?.kanban}</g:link></td>
+                            <td valign="top" class="value"><g:link controller="kanban" action="show" id="${stageRecord?.kanban?.id}">${stageRecord?.kanban?.name}</g:link></td>
                             
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">Stage:</td>
                             
-                            <td valign="top" class="value"><g:link controller="stage" action="show" id="${stageRecord?.stage?.id}">${stageRecord?.stage}</g:link></td>
+                            <td valign="top" class="value"><g:link controller="stage" action="show" id="${stageRecord?.stage?.id}">${stageRecord?.stage?.name}</g:link></td>
                             
                         </tr>
                     

@@ -15,16 +15,13 @@ class BootStrap {
      	
      	def firstKanban = new Kanban(name:"Kanban Board Crud", description:"Get the basic crud for the board working.", type: releaseType).save()
 		def secondKanban = new Kanban(name:"Stage getKanbans", description:"Implement method to allows stages to get kanbans currently the state.", type: releaseType).save()
-		def thirdKanban = new Kanban(name:"Second Ready", description:"Second kanban", type: releaseType).save()
+		def thirdKanban = new Kanban(name:"Create Kanban Panel", description:"Create panel for adding kanban from board.", type: releaseType).save()
 		def conversionKanban = new Kanban(name:"Convert Whiteboard Kanbans", description:"Convert the stickies on the whiteboard into kanban data", type: conversionType).save()
 		
 		firstKanban.moveToStage(readyStage, "brad").save()
 		secondKanban.moveToStage(readyStage, "brad").save()
 		thirdKanban.moveToStage(readyStage, "skye").save()
-		secondKanban.moveToStage(devStage, "skye").save()
-		secondKanban.moveToStage(peerStage, "skye").save()
-		conversionKanban.moveToStage(readyStage, "").save()
-		conversionKanban.moveToStage(devStage, "skye").save()
+		conversionKanban.moveToStage(readyStage, "skye").save()
 		
      }
      def destroy = {
