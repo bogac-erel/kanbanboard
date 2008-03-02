@@ -24,9 +24,6 @@
 			<g:each in="${stage.getKanbans()}" var="kanban">
 				<div class="kanban-container" stage="${stage.id}" style="background-color: ${kanban.type.color}">
 					<div class="kanban-header">
-						<div class="kanban-icons">
-							<img src="/kanbanboard/images/skin/database_edit.png" class="kanban-toggle-owner-edit" width="12" height="12"/>
-						</div>
 						<div class="kanban-owner">${kanban.currentUser}</div>
 						<div class="kanban-edit-owner">
 							<g:form action="updateKanbanOwner">

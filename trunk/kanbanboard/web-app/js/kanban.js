@@ -17,11 +17,12 @@ Kanban = {
 	},
 	
 	toggleEditKanbanOwner : function() {
-		$('.kanban-toggle-owner-edit').toggle(function () {
-			$('.kanban-edit-owner', $(this)[0].parentNode.parentNode.parentNode).show();
-			$('.kanban-owner', $(this)[0].parentNode.parentNode.parentNode).hide();
-			$('.kanbanOwnerInput', $(this)[0].parentNode.parentNode.parentNode).select();
-		}, function() {
+		$('.kanban-owner').click(function () {
+			$('.kanban-edit-owner', $(this)[0].parentNode.parentNode).show();
+			$('.kanban-owner', $(this)[0].parentNode.parentNode).hide();
+			$('.kanbanOwnerInput', $(this)[0].parentNode.parentNode).select();
+		});
+		$('.kanbanOwnerInput').blur(function() {
 			$('.kanban-edit-owner', $(this)[0].parentNode.parentNode.parentNode).hide();
 			$('.kanban-owner', $(this)[0].parentNode.parentNode.parentNode).show();
 		});
