@@ -1,1 +1,1 @@
-<g:render template="createKanban" />
+<g:render template="/kanban/create" />

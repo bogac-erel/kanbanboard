@@ -6,6 +6,12 @@ class Kanban {
 	SortedSet stages
 	static hasMany = [stages:StageRecord]
 	
+	static constraints = {
+		name(blank:false)
+		description(blank:true)
+		type(nullable:false)
+	}
+	
 	def getCurrentStage() {
 		if (getCurrentStageRecord() != null) {
 			return getCurrentStageRecord().stage

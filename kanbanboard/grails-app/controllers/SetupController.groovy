@@ -1,0 +1,7 @@
+class SetupController {
+
+    def index = { 
+    	
+    }
+    
+}

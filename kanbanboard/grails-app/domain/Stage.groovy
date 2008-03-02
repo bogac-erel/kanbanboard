@@ -20,10 +20,14 @@ class Stage {
 	def getCycleTime() {
 		def totalCycleTime = 0
 		def records = StageRecord.findAllByStage(this)
+		def finishedRecords = 0;
 		records.each { it ->
-			totalCycleTime += it.getCycleTime()
+		    if(it.endDate != null) {
+		        finishedRecords = finishedRecords + 1
+			    totalCycleTime += it.getCycleTime()
+		    }
 		}
-		return records.size() != 0 ? totalCycleTime / records.size() : 0
+		return finishedRecords != 0 ? totalCycleTime / finishedRecords : 0
 	}
 	
 }
