@@ -20,10 +20,14 @@ class Kanban {
 	}
 	
 	def getLeadTime() {
-		def start = getFirstStageRecord().startDate.time
-		def endRecord = getCurrentStageRecord()
-		def end = (endRecord != null && endRecord.endDate != null) ? endRecord.endDate : new Date().time
-		return (end - start)
+		if (getFirstStageRecord() != null) {
+			def start = getFirstStageRecord().startDate.time
+			def endRecord = getCurrentStageRecord()
+			def end = (endRecord != null && endRecord.endDate != null) ? endRecord.endDate : new Date().time
+			return (end - start)
+		} else {
+			return 0
+		}
 	}
 	
 	def getCurrentUser() {

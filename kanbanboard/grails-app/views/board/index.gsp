@@ -53,3 +53,8 @@
 </tr>
 </tfoot>
 </table>
+<div>
+	<span class="menuButton">
+		<g:link controller="board" action="createKanban" class="create thickbox" title="Create Kanban">Add Kanban</g:link>
+	</span>
+</div>

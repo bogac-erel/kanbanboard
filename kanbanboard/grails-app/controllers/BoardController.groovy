@@ -17,4 +17,26 @@ class BoardController {
 		redirect(action:index);
 	}
     
+	def createKanban = {
+        def kanban = new Kanban()
+        kanban.properties = params
+        return ['kanban':kanban]
+	}
+
+    def saveKanban = {
+        def kanban = new Kanban(params)
+		if(!kanban.hasErrors() && kanban.save()) {
+			def stage = Stage.listOrderByStageOrder().get(0);
+			kanban.moveToStage(stage, "created").save()
+            flash.message = "Kanban ${kanban.id} created"
+        }
+        else {
+			String errorMsgs = "Error no kanban created"
+			kanban.errors.allErrors.each {
+				errorMsgs = errorMsgs + it
+			}
+            flash.mesage = errorMsgs
+        }
+        redirect(action:index)
+    }
 }
