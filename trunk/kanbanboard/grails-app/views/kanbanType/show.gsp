@@ -7,47 +7,32 @@
         <title>Show KanbanType</title>
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list">KanbanType List</g:link></span>
-            <span class="menuButton"><g:link class="create" action="create">New KanbanType</g:link></span>
-        </div>
         <div class="body">
+	        <div class="nav">
+	            <span class="menuButton"><g:link class="list" action="list">KanbanType List</g:link></span>
+	            <span class="menuButton"><g:link class="create" action="create">New KanbanType</g:link></span>
+	        </div>
             <h1>Show KanbanType</h1>
-            <g:if test="${flash.message}">
-            <div class="message">${flash.message}</div>
-            </g:if>
             <div class="dialog">
                 <table>
                     <tbody>
-
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Id:</td>
-                            
-                            <td valign="top" class="value">${kanbanType.id}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Color:</td>
-                            
-                            <td valign="top" class="value">${kanbanType.color}</td>
-                            
-                        </tr>
+                
+	                    <tr class="prop">
+	                        <td valign="top" class="name">Name:</td>
+                        
+	                        <td valign="top" class="value">${kanbanType.name}</td>
+	                    </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">Description:</td>
                             
                             <td valign="top" class="value">${kanbanType.description}</td>
-                            
                         </tr>
-                    
+
                         <tr class="prop">
-                            <td valign="top" class="name">Name:</td>
+                            <td valign="top" class="name">Color:</td>
                             
-                            <td valign="top" class="value">${kanbanType.name}</td>
-                            
+                            <td valign="top" class="value">${kanbanType.color}</td>                            
                         </tr>
                     
                     </tbody>

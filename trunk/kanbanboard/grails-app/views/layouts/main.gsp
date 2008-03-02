@@ -22,10 +22,16 @@
         <g:javascript library="application" />				
     </head>
     <body>
-        <div id="spinner" class="spinner" style="display:none;">
-            <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
-        </div>	
-        <div class="logo"><img src="${createLinkTo(dir:'images',file:'grails_logo.jpg')}" alt="Grails" /></div>	
-        <g:layoutBody />		
+        <div id="header">
+       		<img src="${createLinkTo(dir:'images',file:'lsdboard-logo-small.png')}" id="header-logo">
+			<div id="tagline">keepin' it lean</div>
+			<div id="navbar">
+				<div class="tab tab-on"><g:link controller="board">Home</g:link></div>
+				<div class="tab tab-off"><g:link controller="kanban">Kanbans</g:link></div>
+				<div class="tab tab-off"><g:link controller="setup">Setup</g:link></div>
+			</div>
+        </div>
+        <g:if test="${flash.message}"><div class="message">${flash.message}</div></g:if>
+		<div id="content"><g:layoutBody /></div>
     </body>	
 </html>

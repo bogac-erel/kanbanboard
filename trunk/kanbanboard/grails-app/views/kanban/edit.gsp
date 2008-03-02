@@ -7,20 +7,17 @@
         <title>Edit Kanban</title>
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list">Kanban List</g:link></span>
-            <span class="menuButton"><g:link class="create" action="create">New Kanban</g:link></span>
-        </div>
+
         <div class="body">
+			<div class="nav">
+	            <span class="menuButton"><g:link class="list" action="list">Kanban List</g:link></span>
+	            <span class="menuButton"><g:link class="create" action="create">New Kanban</g:link></span>
+	        </div>
             <h1>Edit Kanban</h1>
-            <g:if test="${flash.message}">
-            <div class="message">${flash.message}</div>
-            </g:if>
             <g:hasErrors bean="${kanban}">
-            <div class="errors">
-                <g:renderErrors bean="${kanban}" as="list" />
-            </div>
+            	<div class="errors">
+	                <g:renderErrors bean="${kanban}" as="list" />
+	            </div>
             </g:hasErrors>
             <g:form method="post" >
                 <input type="hidden" name="id" value="${kanban?.id}" />
@@ -28,16 +25,7 @@
                     <table>
                         <tbody>
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="description">Description:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:kanban,field:'description','errors')}">
-                                    <input type="text" id="description" name="description" value="${fieldValue(bean:kanban,field:'description')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class="prop">
+							<tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="name">Name:</label>
                                 </td>
@@ -45,7 +33,16 @@
                                     <input type="text" id="name" name="name" value="${fieldValue(bean:kanban,field:'name')}"/>
                                 </td>
                             </tr> 
-
+							
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="description">Description:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:kanban,field:'description','errors')}">
+                                    <textarea id="description" name="description">${fieldValue(bean:kanban,field:'description')}</textarea>
+                                </td>
+                            </tr> 
+                        
 							<tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="kanban">Type:</label>
@@ -60,14 +57,23 @@
                                     <label for="stages">Stages:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:kanban,field:'stages','errors')}">
-                                    
-<ul>
-<g:each var="s" in="${kanban?.stages?}">
-    <li><g:link controller="stageRecord" action="show" id="${s.id}">${s}</g:link></li>
-</g:each>
-</ul>
-<g:link controller="stageRecord" params="["kanban.id":kanban?.id]" action="create">Add StageRecord</g:link>
-
+									<table cellpadding="0" cellspacing="0" style="margin-bottom: 15px;">
+										<tr>
+											<th>Stage</th>
+											<th>User</th>
+											<th>Cycle Time</th>
+										</tr>
+										<tbody>
+										<g:each var="s" in="${kanban.stages}">
+											<tr>
+												<td><g:link controller="stageRecord" action="show" id="${s.id}">${s.stage.name}</g:link></td>
+												<td>${s.user}</td>
+												<td>${DateUtil.getDifferenceAsString(s.getCycleTime())}</td>
+											</tr>
+										</g:each>
+										</tbody>
+									</table>
+									<g:link controller="stageRecord" params="["kanban.id":kanban?.id]" action="create"><img src="${createLinkTo(dir:'images/skin',file:'database_add.png')}" align="absmiddle" /> Add Stage</g:link>
                                 </td>
                             </tr> 
                         

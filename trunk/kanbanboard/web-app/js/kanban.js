@@ -4,6 +4,7 @@ Kanban = {
 		this.toggleKanbans();
 		this.toggleEditKanbanOwner();
 		this.dragKanbans();
+		this.navbarSetup();
 	},
 	
 	toggleKanbans : function() {
@@ -43,6 +44,17 @@ Kanban = {
 				$('.move-stage-form', ui.draggable).submit();
 			}
 		});
+	},
+	
+	navbarSetup : function() {
+	    $('.tab-off').hover(function() {
+	        $(this).addClass('tab-hover');
+	    }, function() {
+	        $(this).removeClass('tab-hover');
+	    });
+	    $('.tab:contains(a)').click(function() {
+	       document.location = $('a', $(this)).attr('href');
+	    });
 	}
 	
 }

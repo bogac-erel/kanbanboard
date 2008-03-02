@@ -55,7 +55,6 @@ input:focus, select:focus, textarea:focus {
 }
 
 .body {
-    float: left;
     margin: 0 15px 10px 15px;
 }
 
@@ -64,7 +63,7 @@ input:focus, select:focus, textarea:focus {
 .nav {
     background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
     border: 1px solid #ccc;
-    border-style: solid none solid none;	
+    border-style: solid;	
     margin-top: 5px;
     padding: 7px 12px;
 }
