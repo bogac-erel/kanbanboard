@@ -18,3 +18,6 @@
 	
 	.stage-cell						{ height: 400px; }
 	.droppable-hover				{ background-color: #FEFFD8 !important; }
+	
+	.kanbanOwnerInput 				{ width : 100px; }
+	.kanban-toggle-owner-edit		{ cursor: pointer; }

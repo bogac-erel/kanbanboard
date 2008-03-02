@@ -36,6 +36,13 @@ class Kanban {
 		}
 	}
 	
+	def setCurrentUser(String user) {
+		def current = getCurrentStageRecord()
+		if (current != null) {
+			current.user = user
+		}
+	}
+	
 	def getCurrentStageRecord() {
 		if (stages != null && stages.isEmpty() == false) {
 			return stages.first()

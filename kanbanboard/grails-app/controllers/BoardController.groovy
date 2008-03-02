@@ -28,7 +28,7 @@ class BoardController {
 		if(!kanban.hasErrors() && kanban.save()) {
 			def stage = Stage.listOrderByStageOrder().get(0);
 			kanban.moveToStage(stage, "created").save()
-            flash.message = "Kanban ${kanban.id} created"
+            flash.message = "Kanban ${kanban.name} created"
         }
         else {
 			String errorMsgs = "Error no kanban created"
@@ -39,4 +39,17 @@ class BoardController {
         }
         redirect(action:index)
     }
+
+	def updateKanbanOwner = {
+		def kanban = Kanban.get( params.id )
+        if(kanban) {
+            kanban.setCurrentUser(params.user)
+            if(!kanban.hasErrors() && kanban.save()) {
+                flash.message = "Kanban ${kanban.name} updated with owner ${params.user}"
+            }
+		} else {
+			flash.message = "Kanban not found with id ${params.id}"
+		}
+		redirect(action:index)
+	}
 }

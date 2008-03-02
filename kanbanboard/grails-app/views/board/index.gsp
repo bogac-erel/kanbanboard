@@ -4,7 +4,9 @@
 	<meta name="layout" content="main" />
 	<title>Some Title</title>
 </head>
-
+<g:if test="${flash.message}">
+<div class="message">${flash.message}</div>
+</g:if>
 <table cellpadding="0" cellspacing="0" width="100%" class="kanban-board-table">
 </thead>
 	<tr>
@@ -23,10 +25,19 @@
 			<div class="kanban-container" stage="${stage.id}" style="background-color: ${kanban.type.color}">
 				<div class="kanban-header">
 					<div class="kanban-icons">
+						<img src="/kanbanboard/images/skin/database_edit.png" class="kanban-toggle-owner-edit" width="12" height="12"/>
+					</div>
+					<div class="kanban-owner">${kanban.currentUser}</div>
+					<div class="kanban-edit-owner">
+						<g:form action="updateKanbanOwner">
+							<input type="text" name="user" value="${kanban.currentUser}" class="kanbanOwnerInput"/>
+							<input type="hidden" name="id" value="${kanban.id}" />
+						</g:form>
+					</div>				
+					<div class="kanban-icons">
 						<img src="/kanbanboard/images/icons/arrow_down.png" class="kanban-expand"/>
 					</div>
 					<div class="kanban-title">${kanban.name}</div>
-					<div class="kanban-owner">${kanban.currentUser}</div>
 				</div>
 				<div class="kanban-description">
 					<div>${kanban.description}</div>
