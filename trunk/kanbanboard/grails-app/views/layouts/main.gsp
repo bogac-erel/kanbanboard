@@ -26,9 +26,9 @@
        		<img src="${createLinkTo(dir:'images',file:'lsdboard-logo-small.png')}" id="header-logo">
 			<div id="tagline">keepin' it lean</div>
 			<div id="navbar">
-				<div class="tab tab-on"><g:link controller="board">Home</g:link></div>
-				<div class="tab tab-off"><g:link controller="kanban">Kanbans</g:link></div>
-				<div class="tab tab-off"><g:link controller="setup">Setup</g:link></div>
+				<div class="tab <g:if test="${webRequest.controllerName == 'board'}">tab-on</g:if><g:else>tab-off</g:else>"><g:link controller="board">Home</g:link></div>
+				<div class="tab <g:if test="${webRequest.controllerName == 'kanban'}">tab-on</g:if><g:else>tab-off</g:else>"><g:link controller="kanban">Kanbans</g:link></div>
+				<div class="tab <g:if test="${['setup','stage','kanbanType'].contains(webRequest.controllerName)}">tab-on</g:if><g:else>tab-off</g:else>"><g:link controller="setup">Setup</g:link></div>
 			</div>
         </div>
         <g:if test="${flash.message}"><div class="message">${flash.message}</div></g:if>
