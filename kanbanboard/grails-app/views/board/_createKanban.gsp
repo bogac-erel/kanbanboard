@@ -12,16 +12,6 @@
          <div class="dialog">
              <table>
                  <tbody>
-                 
-                     <tr class="prop">
-                         <td valign="top" class="name">
-                             <label for="description">Description:</label>
-                         </td>
-                         <td valign="top" class="value ${hasErrors(bean:kanban,field:'description','errors')}">
-                             <input type="text" id="description" name="description" value="${fieldValue(bean:kanban,field:'description')}"/>
-                         </td>
-                     </tr> 
-                 
                      <tr class="prop">
                          <td valign="top" class="name">
                              <label for="name">Name:</label>
@@ -30,14 +20,22 @@
                              <input type="text" id="name" name="name" value="${fieldValue(bean:kanban,field:'name')}"/>
                          </td>
                      </tr> 
-						<tr class="prop">
+					<tr class="prop">
                          <td valign="top" class="name">
                              <label for="kanban">Type:</label>
                          </td>
                          <td valign="top" class="value ${hasErrors(bean:stageRecord,field:'type','errors')}">
                              <g:select optionKey="id" from="${KanbanType.list()}" name="type.id" value="${kanban?.type?.id}" optionValue="name" ></g:select>
                          </td>
-                     </tr>                        
+                     </tr>   
+                     <tr class="prop">
+                         <td valign="top" class="name">
+                             <label for="description">Description:</label>
+                         </td>
+                         <td valign="top" class="value ${hasErrors(bean:kanban,field:'description','errors')}">
+                             <textArea id="description" name="description" value="${fieldValue(bean:kanban,field:'description')}"/>
+                         </td>
+                     </tr>                     
                  </tbody>
              </table>
          </div>
