@@ -1,6 +1,6 @@
 <div class="body">
 	 <div class="nav">
-        <span class="menuButton"><g:link class="list" action="list">Kanban List</g:link></span>
+        <span class="menuButton"><g:link class="list" controller="kanban" action="list">Kanban List</g:link></span>
      </div>
      <h1>Create Kanban</h1>
      <g:hasErrors bean="${kanban}">
