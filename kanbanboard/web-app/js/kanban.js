@@ -40,7 +40,7 @@ Kanban = {
 			tolerance: 'intersect',
 			drop: function(ev, ui) {
 				$('.move-stageId', ui.draggable).val($(this).attr('stage'));
-				$('form', ui.draggable)[1].submit();
+				$('.move-stage-form', ui.draggable).submit();
 			}
 		});
 	}
