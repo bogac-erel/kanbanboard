@@ -2,6 +2,7 @@ class Stage {
 	String name
 	String color = "#FFFFFF"
 	boolean active = true
+	boolean releaseStage
 	Integer stageOrder = 0
 	Integer size
 	Integer maxKanbans
