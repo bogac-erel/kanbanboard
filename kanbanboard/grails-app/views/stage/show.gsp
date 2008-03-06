@@ -55,6 +55,13 @@
                             <td valign="top" class="value">${stage.active}</td>
                             
                         </tr>
+
+						<tr class="prop">
+                            <td valign="top" class="name">Release Stage:</td>
+                            
+                            <td valign="top" class="value">${stage.releaseStage}</td>
+                            
+                        </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name">Color:</td>

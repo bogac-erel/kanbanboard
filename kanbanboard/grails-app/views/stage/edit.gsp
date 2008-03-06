@@ -73,6 +73,15 @@
                                 </td>
                             </tr> 
                         
+							<tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="active">Release Stage:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:stage,field:'releaseStage','errors')}">
+                                    <g:checkBox name="releaseStage" value="${stage?.releaseStage}" ></g:checkBox>
+                                </td>
+                            </tr>
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="color">Color:</label>

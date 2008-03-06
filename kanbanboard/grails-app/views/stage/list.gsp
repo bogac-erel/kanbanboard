@@ -28,6 +28,8 @@
                    	        <g:sortableColumn property="stageOrder" title="Stage Order" />
                         
                    	        <g:sortableColumn property="active" title="Active" />
+
+							<g:sortableColumn property="releaseStage" title="Release Stage" />
                         
                         </tr>
                     </thead>
@@ -46,6 +48,8 @@
                             <td>${stage.stageOrder?.encodeAsHTML()}</td>
                         
                             <td>${stage.active?.encodeAsHTML()}</td>
+
+							<td>${stage.releaseStage?.encodeAsHTML()}</td>
                         
                         </tr>
                     </g:each>
