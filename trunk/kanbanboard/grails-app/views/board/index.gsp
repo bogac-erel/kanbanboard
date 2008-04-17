@@ -63,6 +63,7 @@
 	</table>
 	<div style="padding: 10px;">
         <span class="menuButton"><g:link class="create thickbox" action="createKanban" title="Create Kanban">Add Kanban</g:link></span>
+		<span class="menuButton"><g:link class="release thickbox" action="createRelease" title="Create Release">Create Release</g:link></span>
     </div>
 </body>
 </html>
