@@ -28,6 +28,7 @@
 			<div id="navbar">
 				<div class="tab <g:if test="${webRequest.controllerName == 'board'}">tab-on</g:if><g:else>tab-off</g:else>"><g:link controller="board">Home</g:link></div>
 				<div class="tab <g:if test="${webRequest.controllerName == 'kanban'}">tab-on</g:if><g:else>tab-off</g:else>"><g:link controller="kanban">Kanbans</g:link></div>
+				<div class="tab <g:if test="${webRequest.controllerName == 'release'}">tab-on</g:if><g:else>tab-off</g:else>"><g:link controller="release">Releases</g:link></div>
 				<div class="tab <g:if test="${['setup','stage','kanbanType'].contains(webRequest.controllerName)}">tab-on</g:if><g:else>tab-off</g:else>"><g:link controller="setup">Setup</g:link></div>
 			</div>
         </div>

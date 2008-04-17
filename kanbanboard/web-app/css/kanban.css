@@ -43,6 +43,8 @@
 	.kanbanOwnerInput 				{ width : 100px; }
 	.kanban-toggle-owner-edit		{ cursor: pointer; }
 	
+	.menuButton a.release 			{ background: url(../images/icons/computer_go.png) center left no-repeat; color: #333; padding-left: 25px; }
+	
 /**
  * Setup
  */

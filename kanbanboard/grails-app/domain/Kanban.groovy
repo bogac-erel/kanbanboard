@@ -3,6 +3,7 @@ class Kanban {
 	String name
 	String description
 	KanbanType type
+	Release release
 	SortedSet stages
 	static hasMany = [stages:StageRecord]
 	
@@ -10,6 +11,7 @@ class Kanban {
 		name(blank:false)
 		description(blank:true)
 		type(nullable:false)
+		release(nullable:true)
 	}
 	
 	def getCurrentStage() {

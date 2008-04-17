@@ -24,7 +24,16 @@ class BoardController {
         kanban.properties = params
         return ['kanban':kanban]
 	}
-
+	
+	def createRelease = {
+		def release = new Release()
+		def stages = Stage.list()
+		def lastStage = stages.get(stages.size()-1)
+		release.kanbans = lastStage.getKanbans()
+        release.properties = params
+        return ['release':release]
+	}
+	
     def saveKanban = {
         def kanban = new Kanban(params)
 		if(!kanban.hasErrors() && kanban.save()) {
